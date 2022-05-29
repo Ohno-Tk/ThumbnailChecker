@@ -12,9 +12,25 @@
     <title>WeeklyScheduleTool</title>
 
     <style type="text/css">
+      body {
+        text-align: center;
+      }
       .container
       {
         margin: 0;
+      }
+      h2{
+        display: inline-block;
+        background: linear-gradient(transparent 60%,rgb(100,255,220) 60%);
+        transform: skewX(-10deg);
+      }
+      th {
+        padding: 15px 30px;
+        background: rgb(100,255,220);
+      }
+      td {
+        padding: 15px 30px;
+        background: rgb(200, 255, 220);
       }
     </style>
 
@@ -24,15 +40,100 @@
     <div class="container">
       <div class="row">
         <div class="col-6">
-          
+          <h1>サムネ確認ツール</h1>
+
+          <input type="file" accept="image/png, image/jpeg">
+
+          <img src="./">
+
+          <!-- サムネ倍率 -->
+          <table>
+            <tr>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check form-switch align-middle">
+                  <input class="form-check-input" type="checkbox" id="Scale_1">
+                  <label class="form-check-label" for="Youtube_btn_1">×1.0</label>
+                </div>
+              </td>
+              <td>
+                <div class="form-check form-switch align-middle">
+                  <input class="form-check-input" type="checkbox" id="Scale_2">
+                  <label class="form-check-label" for="Youtube_btn_1">×1.5</label>
+                </div>
+              </td>
+              <td>
+                <div class="form-check form-switch align-middle">
+                  <input class="form-check-input" type="checkbox" id="Scale_3">
+                  <label class="form-check-label" for="Youtube_btn_1">×2.0</label>
+                </div>
+              </td>
+              <td>
+                <div class="form-check form-switch align-middle">
+                  <input class="form-check-input" type="checkbox" id="Scale_4">
+                  <label class="form-check-label" for="Youtube_btn_1">×2.5</label>
+                </div>
+              </td>
+              <td>
+                <div class="form-check form-switch align-middle">
+                  <input class="form-check-input" type="checkbox" id="Scale_5">
+                  <label class="form-check-label" for="Youtube_btn_1">×3.0</label>
+                </div>
+              </td>
+            </tr>
+          </table>
         </div>
         <div class="col-6">
-          
+          <h2>なにこれ？</h2>
+
+          <p>サムネがYoutubeのいろいろがかぶさってくるか確認出来るツールです!</p>
+          <br>
+
+          <h2>設定</h2>
+
+          <table align="center">
+            <tr>
+              <th>Youtube</th>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check form-switch align-middle">
+                  <input class="form-check-input" type="checkbox" id="Youtube_btn_1">
+                  <label class="form-check-label" for="Youtube_btn_1">再生時間_1</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check form-switch align-middle">
+                  <input class="form-check-input" type="checkbox" id="Youtube_btn_2">
+                  <label class="form-check-label" for="Youtube_btn_1">再生時間_2</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check form-switch align-middle">
+                  <input class="form-check-input" type="checkbox" id="Youtube_btn_3">
+                  <label class="form-check-label" for="Youtube_btn_1">再生リスト</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-check form-switch align-middle">
+                  <input class="form-check-input" type="checkbox" id="Youtube_btn_4">
+                  <label class="form-check-label" for="Youtube_btn_1">ライブ</label>
+                </div>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
   </body>
 
   <script>
-    </script>
+  </script>
 </html>
