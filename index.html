@@ -8,16 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <title>WeeklyScheduleTool</title>
 
     <style type="text/css">
       body {
         text-align: center;
-      }
-      .container
-      {
-        margin: 0;
       }
       h2{
         display: inline-block;
@@ -32,6 +30,9 @@
         padding: 15px 30px;
         background: rgb(200, 255, 220);
       }
+      .container {
+        margin: 0;
+      }
     </style>
 
   </head>
@@ -42,47 +43,35 @@
         <div class="col-6">
           <h1>サムネ確認ツール</h1>
 
-          <input type="file" accept="image/png, image/jpeg">
+          <input type="file" id="ImageSelect" accept="image/png, image/jpeg">
 
-          <img src="./">
+          <img id="ThumbnailImage" class="img-fluid" alt="サムネイル用画像">
+
+          <br><br>
 
           <!-- サムネ倍率 -->
-          <table>
-            <tr>
-            </tr>
-            <tr>
-              <td>
-                <div class="form-check form-switch align-middle">
-                  <input class="form-check-input" type="checkbox" id="Scale_1">
-                  <label class="form-check-label" for="Youtube_btn_1">×1.0</label>
-                </div>
-              </td>
-              <td>
-                <div class="form-check form-switch align-middle">
-                  <input class="form-check-input" type="checkbox" id="Scale_2">
-                  <label class="form-check-label" for="Youtube_btn_1">×1.5</label>
-                </div>
-              </td>
-              <td>
-                <div class="form-check form-switch align-middle">
-                  <input class="form-check-input" type="checkbox" id="Scale_3">
-                  <label class="form-check-label" for="Youtube_btn_1">×2.0</label>
-                </div>
-              </td>
-              <td>
-                <div class="form-check form-switch align-middle">
-                  <input class="form-check-input" type="checkbox" id="Scale_4">
-                  <label class="form-check-label" for="Youtube_btn_1">×2.5</label>
-                </div>
-              </td>
-              <td>
-                <div class="form-check form-switch align-middle">
-                  <input class="form-check-input" type="checkbox" id="Scale_5">
-                  <label class="form-check-label" for="Youtube_btn_1">×3.0</label>
-                </div>
-              </td>
-            </tr>
-          </table>
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <input type="radio" name="ThumbnailScale" class="form-check-input" checked>
+              <label class="form-check-label" for="exampleRadio1">×1.0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="ThumbnailScale" class="form-check-input">
+              <label class="form-check-label" for="exampleRadio2">×1.5</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="ThumbnailScale" class="form-check-input">
+              <label class="form-check-label" for="exampleRadio3">×2.0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="ThumbnailScale" class="form-check-input">
+              <label class="form-check-label" for="exampleRadio3">×2.5</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="ThumbnailScale" class="form-check-input">
+              <label class="form-check-label" for="exampleRadio3">×3.0</label>
+            </div>
+          </div>
         </div>
         <div class="col-6">
           <h2>なにこれ？</h2>
@@ -135,5 +124,24 @@
   </body>
 
   <script>
+    $('input[type=file]').change(function() {
+    var file = $(this).prop('files')[0];
+
+    // 画像以外は処理を停止
+    if (! file.type.match('image.*')) {
+      // クリア
+      $(this).val('');
+      $('span').html('');
+      return;
+    }
+
+    // 画像表示
+    var reader = new FileReader();
+    reader.onload = function() {
+      var img_src = $('#ThumbnailImage').attr('src', reader.result);
+      $('span').html(img_src);
+    }
+    reader.readAsDataURL(file);
+  });
   </script>
 </html>
