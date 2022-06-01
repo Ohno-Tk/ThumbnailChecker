@@ -17,6 +17,11 @@
       body {
         text-align: center;
       }
+      h1 {
+        display: inline-block;
+        background: linear-gradient(transparent 60%,rgb(255, 193, 100) 60%);
+        transform: skewX(-10deg);
+      }
       h2{
         display: inline-block;
         background: linear-gradient(transparent 60%,rgb(100,255,220) 60%);
@@ -43,14 +48,19 @@
         <div class="col-6">
           <h1>サムネ確認ツール</h1>
 
-          <input type="file" id="ImageSelect" accept="image/png, image/jpeg">
+          <br><br>
 
-          <img src="./Images/NoImage.jpg" id="ThumbnailImage" class="img-fluid" alt="サムネイル用画像">
+          <input type="file" id="ImageSelect" accept="image/png, image/jpeg">
 
           <br><br>
 
+          <img src="./Images/NoImage.jpg" id="ThumbnailImage" class="img-fluid" alt="サムネイル用画像">
+
+          <br><br><br>
+
           <!-- サムネ倍率 -->
-          
+          <input type="range" class="form-range" id="ScaleBar" min="0.5" max="1" step="0.1" value="1">
+
         </div>
         <div class="col-6">
           <h2>なにこれ？</h2>
@@ -121,6 +131,12 @@
       $('span').html(img_src);
     }
     reader.readAsDataURL(file);
+  });
+
+  // スライダー
+  $('#ScaleBar').on('input change', function() {
+
+    $('#ThumbnailImage').css({transform:'scale('+ $(this).val() +')'});
   });
   </script>
 </html>
