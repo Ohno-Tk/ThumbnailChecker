@@ -90,7 +90,7 @@
             <tr>
               <td>
                 <div class="form-check form-switch align-middle">
-                  <input class="form-check-input" type="checkbox" id="Youtube_btn_1">
+                  <input class="form-check-input" type="checkbox" id="Youtube_btn_1" checked>
                   <label class="form-check-label" for="Youtube_btn_1">再生時間_1</label>
                 </div>
               </td>
@@ -98,7 +98,7 @@
             <tr>
               <td>
                 <div class="form-check form-switch align-middle">
-                  <input class="form-check-input" type="checkbox" id="Youtube_btn_2">
+                  <input class="form-check-input" type="checkbox" id="Youtube_btn_2" checked>
                   <label class="form-check-label" for="Youtube_btn_2">再生リスト</label>
                 </div>
               </td>
@@ -106,7 +106,7 @@
             <tr>
               <td>
                 <div class="form-check form-switch align-middle">
-                  <input class="form-check-input" type="checkbox" id="Youtube_btn_3">
+                  <input class="form-check-input" type="checkbox" id="Youtube_btn_3" checked>
                   <label class="form-check-label" for="Youtube_btn_3">ライブ</label>
                 </div>
               </td>
@@ -133,7 +133,6 @@
     if (! file.type.match('image.*')) {
       // クリア
       $(this).val('');
-      $('span').html('');
       return;
     }
 
