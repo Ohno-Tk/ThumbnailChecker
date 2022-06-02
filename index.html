@@ -38,6 +38,14 @@
       .container {
         margin: 0;
       }
+      .Thumbnail {
+        position: relative;
+      }
+      .ImageCheck {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     </style>
 
   </head>
@@ -54,7 +62,12 @@
 
           <br><br>
 
-          <img src="./Images/NoImage.jpg" id="ThumbnailImage" class="img-fluid" alt="サムネイル用画像">
+          <div class="Thumbnail">
+            <img src="./Images/NoImage.jpg" id="ThumbnailImage" class="img-fluid" alt="サムネイル用画像">
+            <img src="./Images/Youtube_01.png" id="Youtube_Image_1" class="img-fluid ImageCheck" alt="Youtube_btn_1">
+            <img src="./Images/Youtube_02.png" id="Youtube_Image_2" class="img-fluid ImageCheck" alt="Youtube_btn_2">
+            <img src="./Images/Youtube_03.png" id="Youtube_Image_3" class="img-fluid ImageCheck" alt="Youtube_btn_3">
+          </div>
 
           <br><br><br>
 
@@ -86,7 +99,7 @@
               <td>
                 <div class="form-check form-switch align-middle">
                   <input class="form-check-input" type="checkbox" id="Youtube_btn_2">
-                  <label class="form-check-label" for="Youtube_btn_1">再生時間_2</label>
+                  <label class="form-check-label" for="Youtube_btn_2">再生リスト</label>
                 </div>
               </td>
             </tr>
@@ -94,7 +107,7 @@
               <td>
                 <div class="form-check form-switch align-middle">
                   <input class="form-check-input" type="checkbox" id="Youtube_btn_3">
-                  <label class="form-check-label" for="Youtube_btn_1">再生リスト</label>
+                  <label class="form-check-label" for="Youtube_btn_3">ライブ</label>
                 </div>
               </td>
             </tr>
@@ -102,7 +115,7 @@
               <td>
                 <div class="form-check form-switch align-middle">
                   <input class="form-check-input" type="checkbox" id="Youtube_btn_4">
-                  <label class="form-check-label" for="Youtube_btn_1">ライブ</label>
+                  <label class="form-check-label" for="Youtube_btn_4"></label>
                 </div>
               </td>
             </tr>
@@ -134,9 +147,25 @@
   });
 
   // スライダー
-  $('#ScaleBar').on('input change', function() {
+  $('#ScaleBar').on('input', function() {
 
-    $('#ThumbnailImage').css({transform:'scale('+ $(this).val() +')'});
+    $('.Thumbnail').css({transform:'scale('+ $(this).val() +')'});
   });
+
+  // チェックボックス
+  $('#Youtube_btn_3').on('input', function() {
+
+    if ($(this).prop("checked")){
+      console.log($(this)+"");
+
+      $('#Youtube_Image_3').css({'visibility':'visible'});
+    }
+    else{
+      $('#Youtube_Image_3').css({'visibility':'hidden'});
+    }
+  });
+
+  // チェックボックス
+
   </script>
 </html>
