@@ -2,7 +2,6 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -11,49 +10,20 @@
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <title>WeeklyScheduleTool</title>
+    <title>ThumbnailChecker</title>
 
-    <style type="text/css">
-      body {
-        text-align: center;
-      }
-      h1 {
-        display: inline-block;
-        background: linear-gradient(transparent 60%,rgb(255, 193, 100) 60%);
-        transform: skewX(-10deg);
-      }
-      h2{
-        display: inline-block;
-        background: linear-gradient(transparent 60%,rgb(100,255,220) 60%);
-        transform: skewX(-10deg);
-      }
-      th {
-        padding: 15px 30px;
-        background: rgb(100,255,220);
-      }
-      td {
-        padding: 15px 30px;
-        background: rgb(200, 255, 220);
-      }
-      .container {
-        margin: 0;
-      }
-      .Thumbnail {
-        position: relative;
-      }
-      .ImageCheck {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-    </style>
+    <!-- css -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- js -->
+  <script type="text/javascript" src="js/index.js" defer></script>
 
   </head>
 
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-6">
+        <div class="col">
           <h1>サムネ確認ツール</h1>
 
           <br><br>
@@ -76,7 +46,7 @@
           <input type="range" class="form-range" id="ScaleBar" min="0.5" max="1" step="0.1" value="1">
 
         </div>
-        <div class="col-6">
+        <div class="col">
           <h2>なにこれ？</h2>
 
           <p>サムネがYoutubeのいろいろがかぶさってくるか確認出来るツールです!</p>
@@ -125,66 +95,4 @@
       </div>
     </div>
   </body>
-
-  <script>
-    $('input[type=file]').change(function() {
-    var file = $(this).prop('files')[0];
-
-    // 画像以外は処理を停止
-    if (! file.type.match('image.*')) {
-      // クリア
-      $(this).val('');
-      return;
-    }
-
-    // 画像表示
-    var reader = new FileReader();
-    reader.onload = function() {
-      var img_src = $('#ThumbnailImage').attr('src', reader.result);
-      $('span').html(img_src);
-    }
-    reader.readAsDataURL(file);
-  });
-
-  // スライダー
-  $('#ScaleBar').on('input', function() {
-
-    $('.Thumbnail').css({transform:'scale('+ $(this).val() +')'});
-  });
-
-  // チェックボックス
-  $('.Youtube_btn').on('input', function() {
-
-    // 表示非表示するセレクタ
-    var ImageSelector;
-
-    // チェックボックスから画像のIDを決める
-    switch ($(this).attr("id")) {
-      case "Youtube_btn_1":
-        ImageSelector = $('#Youtube_Image_1');
-        break;
-      case "Youtube_btn_2":
-        ImageSelector = $('#Youtube_Image_2');
-        break;
-      case "Youtube_btn_3":
-        ImageSelector = $('#Youtube_Image_3');
-        break;
-      case "Youtube_btn_4":
-        ImageSelector = $('#Youtube_Image_4');
-        break;
-    }
-
-    if ($(this).prop("checked")){
-      console.log($(this)+"");
-
-      ImageSelector.css({'visibility':'visible'});
-    }
-    else{
-      ImageSelector.css({'visibility':'hidden'});
-    }
-  });
-
-  // チェックボックス
-
-  </script>
 </html>
