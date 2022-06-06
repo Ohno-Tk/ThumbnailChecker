@@ -67,6 +67,7 @@
             <img src="./Images/Youtube_01.png" id="Youtube_Image_1" class="img-fluid ImageCheck" alt="Youtube_btn_1">
             <img src="./Images/Youtube_02.png" id="Youtube_Image_2" class="img-fluid ImageCheck" alt="Youtube_btn_2">
             <img src="./Images/Youtube_03.png" id="Youtube_Image_3" class="img-fluid ImageCheck" alt="Youtube_btn_3">
+            <img src="./Images/Youtube_04.png" id="Youtube_Image_4" class="img-fluid ImageCheck" alt="Youtube_btn_4">
           </div>
 
           <br><br><br>
@@ -90,15 +91,15 @@
             <tr>
               <td>
                 <div class="form-check form-switch align-middle">
-                  <input class="form-check-input" type="checkbox" id="Youtube_btn_1" checked>
-                  <label class="form-check-label" for="Youtube_btn_1">再生時間_1</label>
+                  <input class="form-check-input Youtube_btn" type="checkbox" id="Youtube_btn_1" checked>
+                  <label class="form-check-label" for="Youtube_btn_1">再生時間</label>
                 </div>
               </td>
             </tr>
             <tr>
               <td>
                 <div class="form-check form-switch align-middle">
-                  <input class="form-check-input" type="checkbox" id="Youtube_btn_2" checked>
+                  <input class="form-check-input Youtube_btn" type="checkbox" id="Youtube_btn_2" checked>
                   <label class="form-check-label" for="Youtube_btn_2">再生リスト</label>
                 </div>
               </td>
@@ -106,7 +107,7 @@
             <tr>
               <td>
                 <div class="form-check form-switch align-middle">
-                  <input class="form-check-input" type="checkbox" id="Youtube_btn_3" checked>
+                  <input class="form-check-input Youtube_btn" type="checkbox" id="Youtube_btn_3" checked>
                   <label class="form-check-label" for="Youtube_btn_3">ライブ</label>
                 </div>
               </td>
@@ -114,8 +115,8 @@
             <tr>
               <td>
                 <div class="form-check form-switch align-middle">
-                  <input class="form-check-input" type="checkbox" id="Youtube_btn_4">
-                  <label class="form-check-label" for="Youtube_btn_4"></label>
+                  <input class="form-check-input Youtube_btn" type="checkbox" id="Youtube_btn_4" checked>
+                  <label class="form-check-label" for="Youtube_btn_4">外枠</label>
                 </div>
               </td>
             </tr>
@@ -152,15 +153,34 @@
   });
 
   // チェックボックス
-  $('#Youtube_btn_3').on('input', function() {
+  $('.Youtube_btn').on('input', function() {
+
+    // 表示非表示するセレクタ
+    var ImageSelector;
+
+    // チェックボックスから画像のIDを決める
+    switch ($(this).attr("id")) {
+      case "Youtube_btn_1":
+        ImageSelector = $('#Youtube_Image_1');
+        break;
+      case "Youtube_btn_2":
+        ImageSelector = $('#Youtube_Image_2');
+        break;
+      case "Youtube_btn_3":
+        ImageSelector = $('#Youtube_Image_3');
+        break;
+      case "Youtube_btn_4":
+        ImageSelector = $('#Youtube_Image_4');
+        break;
+    }
 
     if ($(this).prop("checked")){
       console.log($(this)+"");
 
-      $('#Youtube_Image_3').css({'visibility':'visible'});
+      ImageSelector.css({'visibility':'visible'});
     }
     else{
-      $('#Youtube_Image_3').css({'visibility':'hidden'});
+      ImageSelector.css({'visibility':'hidden'});
     }
   });
 
