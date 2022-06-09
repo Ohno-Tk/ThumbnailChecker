@@ -24,13 +24,21 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <h1>サムネ確認ツール</h1>
 
-          <br><br>
+          <div class="HeadingParent">
+            <h1 class="HeadingThumbnail">サムネチェッカー</h1>
+          </div>
 
-          <input type="file" id="ImageSelect" accept="image/png, image/jpeg">
+          <br>
 
-          <br><br>
+          <!-- ファイル選択 -->
+          <div id="UploadBlock">
+            <label id="Upload_Image">
+              <input type="file"id="ImageSelect" accept="image/png, image/jpeg">＋サムネを選択
+            </label>
+          </div>
+
+          <br>
 
           <div class="Thumbnail">
             <img src="./Images/NoImage.jpg" id="ThumbnailImage" class="img-fluid" alt="サムネイル用画像">
@@ -40,23 +48,30 @@
             <img src="./Images/Youtube_03.png" id="Youtube_Image_3" class="img-fluid ImageCheck" alt="Youtube_btn_3">
           </div>
 
-          <br><br><br>
+          <br>
 
           <!-- サムネ倍率 -->
+          <div class="HeadingParent">
+            <h2 class="HeadingThumbnail">拡大率</h2>
+          </div>
           <div class="wrap">
-            <p class="SideBySide">0.5：</p>
+            <p class="SideBySide" id="ScaleBarMin">×0.5：</p>
             <input type="range" class="form-range w-75 SideBySide" id="ScaleBar" min="0.5" max="1" step="0.1" value="1">
-            <p class="SideBySide">：1.0</p>
+            <p class="SideBySide" id="ScaleBarMax">：×1.0</p>
           </div>
 
         </div>
         <div class="col">
-          <h2>なにこれ？</h2>
+          <div class="HeadingParent">
+            <h2 class="SettingHeading">なにこれ？</h2>
+          </div>
 
-          <p>サムネがYoutubeのいろいろがかぶさってくるか確認出来るツールです!</p>
+          <p>サムネがYoutubeのいろいろがかぶさってくるか確認出来るツールです!<br>
           <br>
 
-          <h2>設定</h2>
+          <div class="HeadingParent">
+            <h2 class="SettingHeading">設定</h2>
+          </div>
 
           <table align="center">
             <tr>
@@ -95,6 +110,28 @@
               </td>
             </tr>
           </table>
+          <br>
+
+          <div class="HeadingParent">
+            <h2 class="SettingHeading">使い方</h2>
+          </div>
+
+          <ol>
+            <li>[+サムネ選択]ボタンでサムネを選択！</li>
+            <li>[設定]で重ねる要素をチェック！</li>
+            <li>拡大率も調整できるよ！</li>
+          </ol>
+          <br>
+
+          <div class="HeadingParent">
+            <h2 class="SettingHeading">注意</h2>
+          </div>
+
+          <ul>
+            <li>16:9以外のサムネの体裁は保証しかねます</li>
+            <li>本サイトはチェック程度であり、正確に各サイトの表示と一致するとは限りません</li>
+            <li>これつかってどうなっても自己責任でお願いします</li>
+          </ul>
         </div>
       </div>
     </div>

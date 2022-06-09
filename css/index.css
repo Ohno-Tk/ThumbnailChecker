@@ -1,32 +1,43 @@
-body {
-  text-align: center;
-}
-h1 {
-  display: inline-block;
-  background: linear-gradient(transparent 60%,rgb(255, 193, 100) 60%);
-  transform: skewX(-10deg);
-}
-h2{
-  display: inline-block;
-  background: linear-gradient(transparent 60%,rgb(100,255,220) 60%);
-  transform: skewX(-10deg);
-}
 th {
   padding: 15px 30px;
   background: rgb(100,255,220);
 }
+
 td {
   padding: 15px 30px;
   background: rgb(200, 255, 220);
 }
+
+/* 見出し */
+.HeadingParent {
+  text-align: center;
+}
+
+.HeadingThumbnail {
+  display: inline-block;
+  background: linear-gradient(transparent 60%,rgb(255, 193, 100) 60%);
+  transform: skewX(-10deg);
+}
+
+.SettingHeading {
+  display: inline-block;
+  background: linear-gradient(transparent 60%,rgb(100,255,220) 60%);
+  transform: skewX(-10deg);
+}
+
+/* サムネイル画像 */
 .Thumbnail {
   position: relative;
 }
+
+/* サムネイル被り画像 */
 .ImageCheck {
   position: absolute;
   top: 0;
   left: 0;
 }
+
+/* 拡大率 */
 .wrap {
   display:flex;
   justify-content:center;
@@ -35,4 +46,24 @@ td {
 .SideBySide {
   display:flex;
   align-items:center;
+}
+
+/* ファイル選択 */
+#UploadBlock {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#Upload_Image {
+  padding: 15px;
+  background: white;
+  font-weight: bold;
+  border: 3px solid rgb(255, 193, 100);
+  cursor: pointer;
+  align-items: center;
+}
+
+input[type="file"] {
+  display: none;
 }
