@@ -27,3 +27,12 @@ td {
   top: 0;
   left: 0;
 }
+.wrap {
+  display:flex;
+  justify-content:center;
+}
+
+.SideBySide {
+  display:flex;
+  align-items:center;
+}
