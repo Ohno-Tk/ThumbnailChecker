@@ -18,9 +18,9 @@
 - 他のプラットフォームのかぶさりが確認できる
  
 # Requirement(ライブラリなど)
-- <img src="https://img.shields.io/badge/Javascript-276DC3.svg?logo=javascript&style=flat">v5.0
+- <img src="https://img.shields.io/badge/Javascript-276DC3.svg?logo=javascript&style=flat">
 - <img src="https://img.shields.io/badge/-jQuery-0769AD.svg?logo=jquery&style=flat"> 3.4.1
-- <img src="https://img.shields.io/badge/-Bootstrap-563D7C.svg?logo=bootstrap&style=flat">
+- <img src="https://img.shields.io/badge/-Bootstrap-563D7C.svg?logo=bootstrap&style=flat">v5.0
  
 # Note(注意点など)
 - [WIKIを参照してください](https://github.com/Ohno-Tk/Tool_ThumbnailChecker/wiki)
