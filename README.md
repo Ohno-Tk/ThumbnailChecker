@@ -1,5 +1,5 @@
 # Tool_ThumbnailChecker
-サムネイルチェックツール
+プラットフォーム別のサムネイルを確認出来る。
  
 # DEMO(デモ動画や図解)
 ## 画像選択
@@ -25,8 +25,7 @@
 - <img src="https://img.shields.io/badge/-Bootstrap-563D7C.svg?logo=bootstrap&style=flat"> Ver5.0
  
 # Note(注意点など)
-- [WIKIを参照してください](https://github.com/Ohno-Tk/Tool_ThumbnailChecker/wiki)
+- [WIKIを参照してください](https://github.com/Ohno-Tk/Web_ThumbnailChecker/wiki)
  
 # Author(作成情報)
- 
 - 作成者: Ohno-Tk
